@@ -120,11 +120,13 @@ class php_entry_saver_base {
 
         $EmailText = "Hi ".$entryData['rnField1']['firstName']." ".$entryData['rnField1']['lastName'].",<br>";
         $EmailText .= "Your Registration is successful, "."<br>";
-        $EmailText .= "Name: ".$entryData['rnField1']['firstName']." ".$entryData['rnField1']['lastName'].",<br>";
-        $EmailText .= "Email: ".$entryData['rnField2']['value'].",<br>";
-        $EmailText .= "Region: ".$entryData['rnField3']['value'].",<br>";
-        $EmailText .= "Practice Manager or Principle : ".$entryData['rnField6']['value'].",<br><br>";
-        $EmailText .= "Here is your passcode <strong>DIA-".$refCode." </strong> please share it and ask you patients to <a href='http://dentistinawards.org.uk/_vote/'>vote</a>.<br><br>";
+        $EmailText .= "<table>";
+        $EmailText .= "<tr><td>Name: </td><td>".$entryData['rnField1']['firstName']." ".$entryData['rnField1']['lastName']."</td></tr>";
+        $EmailText .= "<tr><td>Email: </td><td>".$entryData['rnField2']['value']."</td></tr>";
+        $EmailText .= "<tr><td>Region: </td><td>".$entryData['rnField3']['value']."</td></tr>";
+        $EmailText .= "<tr><td>Practice Manager or Principle : </td><td>".$entryData['rnField6']['value']."</td></tr>";
+        $EmailText .= "</table>";
+        $EmailText .= "<br>Here is your passcode <strong>DIA-".$refCode." </strong> please share it and ask you patients to <a href='http://dentistinawards.org.uk/_vote/'>vote</a>.<br><br>";
         $EmailText .= "Thanks you!";
 
         $headers = 'MIME-Version: 1.0' . "\r\n";

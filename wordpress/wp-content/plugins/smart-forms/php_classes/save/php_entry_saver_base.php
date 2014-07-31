@@ -119,7 +119,12 @@ class php_entry_saver_base {
 
 
         $EmailText = "Hi ".$entryData['rnField1']['firstName']." ".$entryData['rnField1']['lastName'].",<br>";
-        $EmailText .= " Your Registration is successful, Here is your passcode <strong>DIA-".$refCode." </strong> please share it and ask you patients to <a href='http://dentistinawards.org.uk/_vote/'>vote</a><br>";
+        $EmailText .= "Your Registration is successful, "."<br>";
+        $EmailText .= "Name: ".$entryData['rnField1']['firstName']." ".$entryData['rnField1']['lastName'].",<br>";
+        $EmailText .= "Email: ".$entryData['rnField2']['value'].",<br>";
+        $EmailText .= "Region: ".$entryData['rnField3']['value'].",<br>";
+        $EmailText .= "Practice Manager or Principle : ".$entryData['rnField6']['value'].",<br><br>";
+        $EmailText .= "Here is your passcode <strong>DIA-".$refCode." </strong> please share it and ask you patients to <a href='http://dentistinawards.org.uk/_vote/'>vote</a>.<br><br>";
         $EmailText .= "Thanks you!";
 
         $headers = 'MIME-Version: 1.0' . "\r\n";
